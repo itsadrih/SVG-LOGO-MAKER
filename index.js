@@ -2,9 +2,8 @@ const fs = require('fs');
 const inquirer = require("inquirer");
 const { Triangle, Circle, Square } = require('./library/shapes');
 
-
 function writeSVGFile(filename, content) {
-    fs.writeFile(filename, content, (error) => {
+    writeFile(filename, content, (error) => {
       if (error) {
         console.error(err);
       } else {
@@ -14,8 +13,7 @@ function writeSVGFile(filename, content) {
   }
 
   function init() {
-    inquirer
-      .prompt([
+    prompt([
         {
           type: 'input',
           name: 'text',
